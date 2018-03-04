@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7EC4C6E-1C73-40AC-9F0A-DF66996A1C72}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MSXWallet.Plugin.Nfse</RootNamespace>
+    <AssemblyName>MSXWallet.Plugin.Nfse</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\DadosAssinatura.cs" />
+    <Compile Include="Model\DadosDeclaracaoPrestacaoServico.cs" />
+    <Compile Include="Model\DadosServico.cs" />
+    <Compile Include="Model\DadosValoresDeclaracaoServico.cs" />
+    <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\IdentificacaoPessoaServico.cs" />
+    <Compile Include="Model\DadosConstrucaoCivil.cs" />
+    <Compile Include="Model\DadosContato.cs" />
+    <Compile Include="Model\DadosEndereco.cs" />
+    <Compile Include="Model\DadosIdentificaoRPS.cs" />
+    <Compile Include="Model\DadosInformativoRPS.cs" />
+    <Compile Include="Model\DadosIntermediario.cs" />
+    <Compile Include="Model\DadosTomador.cs" />
+    <Compile Include="Model\DeclaracaoPrestacaoServicoAssinada.cs" />
+    <Compile Include="NFseService.cs" />
+    <Compile Include="Connected Services\ProxyServiceNFse\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlWriter.cs" />
+    <Compile Include="XmlNFse.cs" />
+    <Compile Include="XmlNFseWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.CancelarNfseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.ConsultarLoteRpsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.ConsultarNfsePorFaixaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.ConsultarNfsePorRpsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.ConsultarNfseServicoPrestadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.ConsultarNfseServicoTomadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.GerarNfseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.RecepcionarLoteRpsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.RecepcionarLoteRpsSincronoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\MSXWallet.Plugin.Nfse.ProxyServiceNFse.SubstituirNfseResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyServiceNFse\nfse.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ProxyServiceNFse\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyServiceNFse\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyServiceNFse\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyServiceNFse\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NFseServico\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
